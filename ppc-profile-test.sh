@@ -50,6 +50,7 @@ for index in ${!oldprofiles[*]}; do
 	new="${newprofiles[$index]}"
 	echo "####################"
 	echo "${old} is now ${new}"
+	echo
 	olddir="${old//\//_}" 
 	newdir="${new//\//_}"
 	#echo "dumping ${profile_repodir}/${old}"
@@ -61,5 +62,7 @@ for index in ${!oldprofiles[*]}; do
 	
 	diff -u "${olddir}" "${newdir}"
 	echo "********************"
+	echo
+	echo
 	rm -r "${olddir}" "${newdir}"
 done
